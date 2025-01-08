@@ -42,6 +42,18 @@ dl:
         exchange:
             userEvent: 'dl-userevent'
 
+authuser:
+    refreshscope:
+        name: Henrique Fernandes
+
+management:
+    endpoints:
+        web:
+            exposure:
+                include:
+                    - refresh
+                    - health
+
 # Configuring the Circuit Breaker with Resilience4j (globally) for the service.
 resilience4j:
     circuitbreaker:
