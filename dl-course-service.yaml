@@ -45,7 +45,7 @@ dl:
                 name: 'dl.userevent.ms.course'
 
 # This is part of the Global Config Pattern and it is being used on course >> RefreshScopeController
-authuser:
+course:
     refreshscope:
         name: Henrique Fernandes COURSE!!
 
