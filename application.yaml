@@ -1,6 +1,12 @@
+# service-registry now is using Spring Security, so we need to provide the username and password to access it.
+dl:
+    serviceRegistry:
+        username: admin
+        password: 'admin'
+
 eureka:
   client:
     serviceUrl:
-      defaultZone: 'http://localhost:8761/eureka'
+      defaultZone: 'http://${dl.serviceRegistry.username}:${dl.serviceRegistry.password}@localhost:8761/eureka'
   instance:
     hostname: localhost
