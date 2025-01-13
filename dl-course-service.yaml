@@ -40,9 +40,12 @@ dl:
     broker:
         exchange:
             userEventExchange: 'dl-userevent'
+            notificationCommandExchange: dl.notificationcommand
         queue:
             userEventQueue:
                 name: 'dl.userevent.ms.course'
+        key:
+            notificationCommandKey: ms.notification
 
 # This is part of the Global Config Pattern and it is being used on course >> RefreshScopeController
 course:
