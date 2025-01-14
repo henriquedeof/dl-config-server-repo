@@ -3,6 +3,10 @@ dl:
     serviceRegistry:
         username: admin
         password: 'admin'
+    auth:
+        jwtSecret: NkIP8zxkLUlWkEg8LIS8m6omrUDdYfeTgu7UkfDZoKTmNEP2EAR7Z3574uN0G5CMSYZwk4aAgOwaQhMqCKbPphHaHbXDSrXJp88EBRA8gft6uP8WaAUVT5F1v8cfN3ii4F3tUoX1tOiJYq6PtGrfQJsg9f1YYStdhBw2QjQGljWxRvhuaDPWihAu5pNoKl8fmBRQzjFwrKs1cS868eB6lybZKVCqugj24p1GdtEssMZwnC0nYSjbU9r4rJSo9heCKb7GGyl7KQvLMeHymyLCh4ZrFOrlUBdSSN5VoPzXMJ99C0wtFCoYTVjFdUgy1WcoWJHtqDGcpXETGbqjHaHqfPBMgHRS5REBcqTHkaOkwdhAbf6W0g1lniKat8Zy2QUSnY0VdEkslvoGYphtMhPWssPVAWcmZfkBaYcMCtaBTRcXKwlMf3i69OFOqzYCSF1fv2oTQYBpMmxBfiWaEvxTDe3sijZWAipBDWTeQmZknZX1uAQ5i4DZmJ4XP7CLNmz6
+        # In ms this value below corresponds to 4h
+        jwtExpirationMs: 14400000
 
 eureka:
   client:
