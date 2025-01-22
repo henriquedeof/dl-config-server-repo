@@ -1,5 +1,5 @@
 server:
-    port: 8084
+    port: ${PORT}
     servlet:
         context-path: '/dl-notification/'
 
@@ -7,9 +7,9 @@ spring:
     application:
         name: dl-notification-service
     datasource:
-        url:  jdbc:postgresql://localhost:5432/dl-notification-v2
-        username: postgres
-        password: root
+        url:  ${JDBC_DATABASE_URL}
+        username: ${JDBC_DATABASE_USERNAME}
+        password: ${JDBC_DATABASE_PASSWORD}
     jpa:
         hibernate:
             ddl-auto: update
@@ -23,15 +23,15 @@ spring:
         ansi:
             enabled: Always
     rabbitmq:
-        addresses: amqps://dsvvfanu:4FhHf07AACm8Gv1-SoWH337wGN6zGi1P@possum.lmq.cloudamqp.com/dsvvfanu
+        addresses: ${CLOUDAMQP_URL}
 
-logging:
-    level:
-        com.xpto.distancelearning: TRACE
-        org.springframework.core.env: DEBUG
-        root: INFO
-        org.springframework.web: DEBUG
-        org.hibernate: INFO
+#logging:
+#    level:
+#        com.xpto.distancelearning: TRACE
+#        org.springframework.core.env: DEBUG
+#        root: INFO
+#        org.springframework.web: DEBUG
+#        org.hibernate: INFO
 
 dl:
     broker:
