@@ -1,0 +1,58 @@
+server:
+    port: 8086
+    servlet:
+        context-path: '/dl-payment/'
+
+spring:
+    application:
+        name: dl-payment-service
+    datasource:
+        url:  jdbc:postgresql://localhost:5432/dl-payment
+        username: postgres
+        password: root
+    jpa:
+        hibernate:
+            ddl-auto: update
+            dialect: org.hibernate.dialect.PostgreSQLDialect
+            jdbc:
+                lob.non-contextual-creation: true
+        properties:
+            hibernate:
+                show_sql: true
+    output:
+        ansi:
+            enabled: Always
+    rabbitmq:
+        addresses: amqps://dsvvfanu:4FhHf07AACm8Gv1-SoWH337wGN6zGi1P@possum.lmq.cloudamqp.com/dsvvfanu
+
+logging:
+    level:
+        com.xpto: TRACE
+        root: INFO
+        org.springframework.web: DEBUG
+        org.hibernate: INFO
+
+dl:
+    broker:
+        exchange:
+            userEventExchange: dl.userevent
+            paymentCommandExchange: dl.paymentcommand
+            paymentEventExchange: dl.paymentevent
+        queue:
+            userEventQueue:
+                name: dl.userevent.ms.payment
+            paymentCommandQueue:
+                name: dl.paymentcommand.ms.payment
+        key:
+            paymentCommandKey: ms.payment
+    stripe:
+        secretKey: '{cipher}2babf3947e7f711c5420848759a3bbd13aa78bd71bbc5dd70160d81dcfd1e0bb7ddf94694f90f0e7a68a0accaa49030107181bde46bdc1d22bfb3b9b0df4bc0f851512fb60c234b3e4f3e380dbc1bc2dd1983809401ac928acef169bdfb53597fb789789d6db8b9d57f6487d8b133158a33a3a5e1353571ad075cd4c98a43afe'
+
+
+management:
+    endpoints:
+        web:
+            exposure:
+                include:
+                    - refresh
+                    - health
