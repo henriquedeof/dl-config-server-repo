@@ -35,7 +35,8 @@ logging:
 dl:
     broker:
         exchange:
-            userEventExchange: dl.userevent
+            # It should be dl.userevent (with a dot not dash)
+            userEventExchange: dl-userevent
             paymentCommandExchange: dl.paymentcommand
             paymentEventExchange: dl.paymentevent
         queue:
@@ -46,6 +47,7 @@ dl:
         key:
             paymentCommandKey: ms.payment
     stripe:
+        # secretKey: '{cipher}SOME_RANDOM_STRING' # This way I encrypt the 'SOME_RANDOM_STRING' secretKey, so that I do not expose it when it goes to github.
         secretKey: '{cipher}2babf3947e7f711c5420848759a3bbd13aa78bd71bbc5dd70160d81dcfd1e0bb7ddf94694f90f0e7a68a0accaa49030107181bde46bdc1d22bfb3b9b0df4bc0f851512fb60c234b3e4f3e380dbc1bc2dd1983809401ac928acef169bdfb53597fb789789d6db8b9d57f6487d8b133158a33a3a5e1353571ad075cd4c98a43afe'
 
 
