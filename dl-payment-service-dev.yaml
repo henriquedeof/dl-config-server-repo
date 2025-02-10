@@ -48,7 +48,8 @@ dl:
             paymentCommandKey: ms.payment
     stripe:
         # secretKey: '{cipher}SOME_RANDOM_STRING' # This way I encrypt the 'SOME_RANDOM_STRING' secretKey, so that I do not expose it when it goes to github.
-        secretKey: '{cipher}2babf3947e7f711c5420848759a3bbd13aa78bd71bbc5dd70160d81dcfd1e0bb7ddf94694f90f0e7a68a0accaa49030107181bde46bdc1d22bfb3b9b0df4bc0f851512fb60c234b3e4f3e380dbc1bc2dd1983809401ac928acef169bdfb53597fb789789d6db8b9d57f6487d8b133158a33a3a5e1353571ad075cd4c98a43afe'
+        # It was genrated through http://localhost:8888/encrypt, which is part of the config-server project.
+        secretKey: '{cipher}43ec74694c251c37e81ce5d97ab5f5330c534c824fc2178721712e2d65e01c73b826a90de286f36265f664a1ab726ab32e4db090831afcdc9b9bc814326148abbf7ce8380601bd93a2fac9dafbabd3e09ef457b6e676f199872ac6c5b05c0b97298e22b319fac3b9f013a36e2f1ab837f848580192e074505956b8d9eb3b585b'
 
 
 management:
