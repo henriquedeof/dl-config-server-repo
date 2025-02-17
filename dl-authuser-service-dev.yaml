@@ -41,6 +41,10 @@ dl:
     broker:
         exchange:
             userEvent: 'dl-userevent'
+            paymentEvent: dl.paymentevent
+        queue:
+            paymentEventQueue:
+                name: dl.paymentevent.ms.authuser
 
 # This is part of the Global Config Pattern and it is being used on authuser >> RefreshScopeController
 authuser:
